@@ -25,23 +25,24 @@ snippet oo
 ##
 ## Basic Java packages and import
 snippet im
-	import ${0}
-snippet j.b
-	java.beans.
-snippet j.i
-	java.io.
-snippet j.m
-	java.math.
-snippet j.n
-	java.net.
-snippet j.u
-	java.util.
-##
+	import ${1};${0}
+
+snippet ji
+	import java.io.${1};${0}
+snippet jm
+	import java.math.${1};${0}
+snippet jn
+	import java.net.${1};${0}
+snippet ju
+	import java.util.${1};${0}
+
 ## Class
 snippet cl
 	class ${1:`vim_snippets#Filename("$1", "untitled")`} ${0}
-snippet pcl
-	public class ${1:`vim_snippets#Filename("$1", "untitled")`} ${0}
+snippet pcl Public Class
+	public class ${1:`vim_snippets#Filename("$1", "untitled")`} {
+	    ${0}
+	}
 snippet in
 	interface ${1:`vim_snippets#Filename("$1", "untitled")`} ${2:extends Parent}
 snippet tc
@@ -73,11 +74,17 @@ snippet def
 	default:
 		${0}
 snippet el
-	else
+	else {
+	    ${0}
+	}
 snippet eif
-	else if (${1}) ${0}
+	else if (${1}) {
+	    ${0}
+	}
 snippet if
-	if (${1}) ${0}
+	if (${1}) {
+	    ${0}
+	}
 snippet sw
 	switch (${1}) {
 		${0}
@@ -87,6 +94,53 @@ snippet sw
 snippet m
 	${1:void} ${2:method}(${3}) ${4:throws }
 ##
+snippet cm
+	public void ${1:`vim_snippets#Filename("$1", "untitled")`}(${2:vars}) {
+	    ${0}
+	}
+
+snippet vm
+	public void ${1:method}(${2:vars}) {
+	    ${0}
+	}
+
+snippet im
+	public int ${1:method}(${2:vars}) {
+	    ${0}
+
+	    return ;
+	}
+
+snippet dm
+	public double ${1:method}(${2:vars}) {
+	    ${0}
+
+	    return ;
+	}
+
+snippet cm
+	private void ${1:`vim_snippets#Filename("$1", "untitled")`}(${2:vars}) {
+	    ${0}
+	}
+
+snippet pvm
+	private void ${1:method}(${2:vars}) {
+	    ${0}
+	}
+
+snippet pim
+	private int ${1:method}(${2:vars}) {
+	    ${0}
+
+	    return ;
+	}
+
+snippet pdm
+	private double ${1:method}(${2:vars}) {
+	    ${0}
+
+	    return ;
+	}
 ## Create a Variable
 snippet v
 	${1:String} ${2:var}${3: = null}${4};

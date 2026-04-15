@@ -112,6 +112,10 @@ snippet cl
 	protected:
 		m_${5}; /*!< ${6:Member description} */
 	};
+# constructor function implementation
+snippet cfun
+	`vim_snippets#Filename('$1', 'ClassName')`::`vim_snippets#Filename('$1', 'ClassName')`(${1:double ex, double why}):(${1:x(ex), y(why)}) { }
+
 # member function implementation
 snippet mfun
 	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {

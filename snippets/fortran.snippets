@@ -1,7 +1,19 @@
+snippet bl
+	block
+		${0}
+	end block
+snippet prog
+	program ${1:main}
+		implicit none
+
+		${0}
+	end program $1
+snippet p
+	print *, ${0}
+
 snippet impl
 	implicit none
 		${0}
-snippet prog
 	program ${1:main}
 		${0}
 	end program $1
