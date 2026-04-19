@@ -25,6 +25,19 @@ snippet docs
 	Description: ${0}
 	"""
 
+snippet doc "insert docstring with params, etc"
+	    """${1:${VISUAL}}
+
+		$0
+
+		Parameters
+		----------
+
+		Returns
+		-------
+		"""
+
+
 # Unittest skip
 snippet sk "skip unittests" b
 	@unittest.skip(${1:skip_reason})
