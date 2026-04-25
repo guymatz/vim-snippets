@@ -25,3 +25,26 @@ endf
 "     if filename == '' | return a:0 == 2 ? a:2 : '' | endif
 "     return !a:0 || a:1 == '' ? filename : substitute(a:1, '$1', filename, 'g')
 " endf
+
+function vim_snippets#Dirname(...)
+  " name of current dir, e.g. /home/stoopy/c -> c
+  return expand('%:p:h:t')
+endfunction
+
+function vim_snippets#Uppercase(s)
+  " echom "uppercasing " . a:s
+  let l:caps = substitute(a:s, ".", "\\U\\0", "g")
+  " echom "caps " . l:caps
+  return substitute(l:caps, "\\W", "_", "g")
+endfunction
+
+function vim_snippets#GuardDir(...)
+  let l:caps_dir = vim_snippets#Uppercase(vim_snippets#Dirname())
+  " echom "caps dir = " . l:caps_dir
+  return substitute(l:caps_dir, "\\W", "_", "g")
+endfunction
+
+function vim_snippets#DisplayName(name)
+  echom "Hello!  My name is:"
+  echom vim_snippets#Uppercase(a:name)
+endfunction

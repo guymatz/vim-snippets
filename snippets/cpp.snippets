@@ -98,20 +98,23 @@ snippet mu
 ## Class
 # class
 snippet cl
+	#ifndef `vim_snippets#GuardDir()`_$1_HPP_
+	#define `vim_snippets#GuardDir()`_$1_HPP_
 	/*! \class $1
 	 *  \brief ${3:Brief class description}
 	 *
 	 *  ${4:Detailed description}
 	 */
-	class ${1:`vim_snippets#Filename('$1', 'name')`}
-	{
-	public:
+	class ${1:`vim_snippets#Filename('$1', 'name')`} {
+	 public:
 		$1(${2});
 		virtual ~$1();
 
-	protected:
+	 protected:
 		m_${5}; /*!< ${6:Member description} */
 	};
+	#endif  // `vim_snippets#GuardDir()`_$1_HPP_
+
 # constructor function implementation
 snippet cfun
 	`vim_snippets#Filename('$1', 'ClassName')`::`vim_snippets#Filename('$1', 'ClassName')`(${1:double ex, double why}):(${1:x(ex), y(why)}) { }
