@@ -43,8 +43,3 @@ function vim_snippets#GuardDir(...)
   " echom "caps dir = " . l:caps_dir
   return substitute(l:caps_dir, "\\W", "_", "g")
 endfunction
-
-function vim_snippets#DisplayName(name)
-  echom "Hello!  My name is:"
-  echom vim_snippets#Uppercase(a:name)
-endfunction
