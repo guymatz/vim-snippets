@@ -40,9 +40,14 @@ snippet ju
 snippet cl
 	class ${1:`vim_snippets#Filename("$1", "untitled")`} ${0}
 snippet pcl Public Class
+	import java.util.logging.Logger;
 	public class ${1:`vim_snippets#Filename("$1", "untitled")`} {
-	    ${0}
+		private static final Logger L = Logger.getLogger(${1}.class.getName());
+		public ${1:`vim_snippets#Filename("$1", "untitled")`}(${2:vars}) {
+			${0}
+		}
 	}
+
 snippet in
 	interface ${1:`vim_snippets#Filename("$1", "untitled")`} ${2:extends Parent}
 snippet tc
@@ -116,11 +121,6 @@ snippet dm
 	    ${0}
 
 	    return ;
-	}
-
-snippet cm
-	private void ${1:`vim_snippets#Filename("$1", "untitled")`}(${2:vars}) {
-	    ${0}
 	}
 
 snippet pvm
