@@ -1,5 +1,12 @@
 extends sh
 
+snippet safe "safe bash options"
+	# e - script stops on error (return != 0)
+	# u - error if undefined variable
+	# o pipefail - script fails if one of piped command fails
+	# x - output each line (debug)
+	set -euo pipefail
+
 # Shebang
 snippet #!
 	#!/usr/bin/env bash
