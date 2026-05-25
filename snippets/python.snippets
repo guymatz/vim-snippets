@@ -25,6 +25,19 @@ snippet docs
 	Description: ${0}
 	"""
 
+snippet gdoc "insert google-style docstring"
+	"""
+	${1:description}
+
+	Args:
+		${2:arg1} 
+
+	Returns:
+		${3:return description}
+
+	Raises:
+	"""
+
 snippet doc "insert docstring with params, etc"
 	    """${1:${VISUAL}}
 
@@ -536,3 +549,11 @@ snippet fprs
 	print("$0", file=${1:sys.stderr})
 snippet fprf
 	print(f"$0", file=${1:sys.stderr})
+
+# pylint
+snippet pylinttma
+	# pylint: disable=too-many-arguments
+snippet pylintttml
+	# pylint: disable=too-many-locals
+snippet pylintttmiv
+	# pylint: disable=too-many-instance-variables
