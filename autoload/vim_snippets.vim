@@ -43,3 +43,11 @@ function vim_snippets#GuardDir(...)
   " echom "caps dir = " . l:caps_dir
   return substitute(l:caps_dir, "\\W", "_", "g")
 endfunction
+
+function vim_snippets#LineNum(...)
+  echom "in vim_snippets#LineNum . . ."
+  let l:line_num = line('.')
+  echom "line num = " . l:line_num
+  " echom "caps dir = " . l:caps_dir
+  return line_num
+endfunction

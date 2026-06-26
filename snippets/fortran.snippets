@@ -1,34 +1,37 @@
+snippet stop
+	print *, "`vim_snippets#Filename()` +`vim_snippets#LineNum()`"
+	STOP`vim_snippets#LineNum()`
+
 snippet bl
 	block
-		${0}
+	    ${0}
 	end block
+
 snippet prog
 	program ${1:main}
-		implicit none
-
-		${0}
+	    implicit none
+	    ${0}
 	end program $1
 snippet p
 	print *, ${0}
 
 snippet impl
 	implicit none
-		${0}
-	program ${1:main}
-		${0}
-	end program $1
+	${0}
+
 snippet mod
 	module ${1:modulename}
-		${0}
+	    ${0}
 	end module $1
 snippet proc
 	procedure ${1:name}
-		${0}
+	    ${0}
 	end procedure $1
 snippet iface
 	interface ${1:name}
-		${0}
+	    ${0}
 	end interface $1
+
 snippet doc
 	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	! File: ${2:`vim_snippets#Filename('$1')`}
@@ -64,7 +67,7 @@ snippet str
 # Types
 snippet type
 	type(${1:name})
-		${0}
+	    ${0}
 	end type
 snippet const
 	${1:type}, parameter :: $2 = ${0}
@@ -73,43 +76,43 @@ snippet arr
 snippet intent
 	${1:type}, intent(inout) :: ${0}
 # Array
-snippet /
-	(/ $1 /) ${2:,&} ${0}
+snippet/
+	(/$1/)${2:,&} ${0}
 snippet if
 	if ($1) then
-		${0}
+	    ${0}
 	end if
 snippet case
 	select case (${1:expr})
-		case ($2)
-		case default
-			$3
+	    case ($2)
+	    case default
+	    $3
 	end select ${0}
 snippet do
 	do ${1:i} = ${2:start}, ${3:end}, ${4:incr}
-		${0}
+	    ${0}
 	end do
 snippet dow
 	do while ($1)
-		$2
+	    $2
 	end do
 snippet sub
 	subroutine ${1:name}($2)
-		${0}
+	    ${0}
 	end subroutine $1
 snippet func
 	function ${1:name}($2) result($3)
-		${0}
+	    ${0}
 	end function $1
 snippet pr
-	write(*,*) ${0}
+	write (*, *) ${0}
 snippet dpr
-	write(*,*) '$1 = ', $1
+	write (*, *) '$1 = ', $1
 snippet read
-	read(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
+	read (unit=${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
 snippet write
-	write(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
+	write (unit=${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
 snippet open
-	open(unit = ${1:fp}, file = ${2:filename}, status = ${3:unknown}, iostat = ${4:ierr}) ${0}
+	open (unit=${1:fp}, file = ${2:filename}, status = ${3:unknown}, iostat = ${4:ierr}) ${0}
 snippet close
-	close(unit = ${1:fp}) ${0}
+	close (unit=${1:fp}) ${0}
